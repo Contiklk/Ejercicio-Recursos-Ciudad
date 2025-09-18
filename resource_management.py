@@ -3,23 +3,17 @@ def modulo(a, b):
     resto = a - int * b
     return resto
 
-print(modulo(7, 3))
-
 def raiz(a):
     x = 0
     while x*x <= a:
         x = x+1
     return x-1
 
-print(raiz(37))
-
 def potencia(base, exp):
     i = 1
     for x in range(exp):
         i = i * base
     return i
-
-print(potencia(5, 2))
 
 def ordenar_array(arr):
     n = len(arr)
