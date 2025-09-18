@@ -1,9 +1,9 @@
 import resource_management as rm
 
 def edificio():
-    madera = 300
-    piedra = 200
-    metal = 150
+    madera = 450
+    piedra = 350
+    metal = 400
     dinero = 1000
 
     total_recursos = rm.sumar_array([madera, piedra, metal, dinero])
@@ -14,7 +14,7 @@ def edificio():
     hospital = [[30, 20, 40, 100], [40, 25, 50, 120], [50, 30, 60, 150]]
     museo = [[25, 15, 30, 80], [35, 20, 40, 100], [45, 25, 50, 130]]
 
-    subsidio = [[5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5]]
+    subsidio = [[5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5]]
 
     casa_subsidio = rm.sumar_matrices(casa, subsidio)
     colegio_subsidio = rm.sumar_matrices(colegio, subsidio)
@@ -25,3 +25,12 @@ def edificio():
     print(f"Costo de construcción de colegio con subsidio: {colegio_subsidio}")
     print(f"Costo de construcción de hospital con subsidio: {hospital_subsidio}")
     print(f"Costo de construcción de museo con subsidio: {museo_subsidio}")
+
+def menu():
+    print("1. Construir casa")
+    print("2. Construir colegio")
+    print("3. Construir hospital")
+    print("4. Construir museo")
+    print("5. Salir")
+    eleccion = input("Seleccione una opción: ")
+    return eleccion
