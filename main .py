@@ -5,13 +5,15 @@ import time
 paso = 0
 while True:
     paso += 1
-    print(f"--- Inicio paso {paso} ---")
+    print(f"\n--- Inicio paso {paso} ---")
+    ed.edificio()
+    print("========== MENÚ ==========")
     print("1. Construir casa")
     print("2. Construir colegio")
     print("3. Construir hospital")
     print("4. Construir museo")
     print("5. Salir")
-    eleccion = input("Seleccione una opción: ")
+    eleccion = input("\nSeleccione una opción: ")
     if eleccion == "1":
         tipo = input("Elige el tipo de casa (1, 2, 3):")
     elif eleccion == "2":
@@ -22,6 +24,5 @@ while True:
         tipo = input("Elige el tipo de museo (1, 2, 3):")
     else:
         break
-    ed.edificio()
     print(f"--- Fin paso {paso} ---\n")
     time.sleep(3)
