@@ -41,3 +41,29 @@ def edificio():
     imprimir_costos("Colegio", colegio_subsidio)
     imprimir_costos("Hospital", hospital_subsidio)
     imprimir_costos("Museo", museo_subsidio)
+
+def construir(tipo, categoria):
+    global madera, piedra, metal, dinero
+    if tipo == "1":
+        costos = [[10, 5, 15, 30], [20, 10, 25, 50], [30, 15, 35, 70]]
+    elif tipo == "2":
+        costos = [[20, 10, 25, 50], [30, 15, 35, 70], [40, 20, 45, 90]]
+    elif tipo == "3":
+        costos = [[30, 20, 40, 100], [40, 25, 50, 120], [50, 30, 60, 150]]
+    else:
+        print("Tipo inválido.")
+        return
+
+    subsidio = [5, 5, 5, 5]
+    costos_categoria = costos[categoria - 1]
+    costos_finales = [c + s for c, s in zip(costos_categoria, subsidio)]
+
+    if (madera >= costos_finales[0] and piedra >= costos_finales[1] and
+        metal >= costos_finales[2] and dinero >= costos_finales[3]):
+        madera -= costos_finales[0]
+        piedra -= costos_finales[1]
+        metal -= costos_finales[2]
+        dinero -= costos_finales[3]
+        print("Construcción exitosa.")
+    else:
+        print("No hay suficientes recursos para construir.")

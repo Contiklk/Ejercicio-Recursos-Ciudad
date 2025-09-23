@@ -16,12 +16,16 @@ while True:
     eleccion = input("\nSeleccione una opción: ")
     if eleccion == "1":
         tipo = input("Elige el tipo de casa (1, 2, 3):")
+        ed.construir(tipo, int(tipo))
     elif eleccion == "2":
         tipo = input("Elige el tipo de colegio (1, 2, 3):")
+        ed.construir(tipo, int(tipo))
     elif eleccion == "3":
         tipo = input("Elige el tipo de hospital (1, 2, 3):")
+        ed.construir(tipo, int(tipo))
     elif eleccion == "4":
         tipo = input("Elige el tipo de museo (1, 2, 3):")
+        ed.construir(tipo, int(tipo))
     else:
         break
     print(f"--- Fin paso {paso} ---\n")
