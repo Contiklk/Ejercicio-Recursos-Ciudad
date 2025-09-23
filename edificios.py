@@ -1,13 +1,19 @@
 import resource_management as rm
 
-def edificio():
-    madera = 450
-    piedra = 350
-    metal = 400
-    dinero = 1000
+madera = 450
+piedra = 350
+metal = 400
+dinero = 1000
 
-    total_recursos = rm.sumar_array([madera, piedra, metal, dinero])
-    print(f"Total de recursos: {total_recursos}")
+def edificio():
+    recursos = [madera, piedra, metal, dinero]
+    nombres = ["Madera", "Piedra", "Metal", "Dinero"]
+    total_recursos = rm.sumar_array(recursos)
+
+    print("\n========== RECURSOS DISPONIBLES ==========")
+    for nombre, valor in zip(nombres, recursos):
+        print(f"{nombre}: {valor}")
+    print(f"Total de recursos: {total_recursos}\n")
 
     casa = [[10, 5, 15, 30], [20, 10, 25, 50], [30, 15, 35, 70]]
     colegio = [[20, 10, 25, 50], [30, 15, 35, 70], [40, 20, 45, 90]]
@@ -21,7 +27,17 @@ def edificio():
     hospital_subsidio = rm.sumar_matrices(hospital, subsidio)
     museo_subsidio = rm.sumar_matrices(museo, subsidio)
 
-    print(f"Costo de construcción de casa con subsidio: {casa_subsidio}")
-    print(f"Costo de construcción de colegio con subsidio: {colegio_subsidio}")
-    print(f"Costo de construcción de hospital con subsidio: {hospital_subsidio}")
-    print(f"Costo de construcción de museo con subsidio: {museo_subsidio}")
+    def imprimir_costos(nombre, matriz):
+        print(f"--- {nombre} ---")
+        for i, fila in enumerate(matriz):
+            print(f"Tipo {i+1}: ", end="")
+            for recurso, valor in zip(nombres, fila):
+                print(f"{recurso}: {valor}", end="  ")
+            print()
+        print()
+
+    print("========== COSTOS DE CONSTRUCCIÓN CON SUBSIDIO ==========")
+    imprimir_costos("Casa", casa_subsidio)
+    imprimir_costos("Colegio", colegio_subsidio)
+    imprimir_costos("Hospital", hospital_subsidio)
+    imprimir_costos("Museo", museo_subsidio)

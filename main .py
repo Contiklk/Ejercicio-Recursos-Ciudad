@@ -11,15 +11,15 @@ while True:
     print("3. Construir hospital")
     print("4. Construir museo")
     print("5. Salir")
-    eleccion = int(input("Seleccione una opción: "))
-    if eleccion == 1:
-        tipo = int(input("Elige el tipo de casa (1, 2, 3):"))
-    elif eleccion == 2:
-        tipo = int(input("Elige el tipo de colegio (1, 2, 3):"))
-    elif eleccion == 3:
-        tipo = int(input("Elige el tipo de hospital (1, 2, 3):"))
-    elif eleccion == 4:
-        tipo = int(input("Elige el tipo de museo (1, 2, 3):"))
+    eleccion = input("Seleccione una opción: ")
+    if eleccion == "1":
+        tipo = input("Elige el tipo de casa (1, 2, 3):")
+    elif eleccion == "2":
+        tipo = input("Elige el tipo de colegio (1, 2, 3):")
+    elif eleccion == "3":
+        tipo = input("Elige el tipo de hospital (1, 2, 3):")
+    elif eleccion == "4":
+        tipo = input("Elige el tipo de museo (1, 2, 3):")
     else:
         break
     ed.edificio()
