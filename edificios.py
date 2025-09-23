@@ -25,12 +25,3 @@ def edificio():
     print(f"Costo de construcción de colegio con subsidio: {colegio_subsidio}")
     print(f"Costo de construcción de hospital con subsidio: {hospital_subsidio}")
     print(f"Costo de construcción de museo con subsidio: {museo_subsidio}")
-
-def menu():
-    print("1. Construir casa")
-    print("2. Construir colegio")
-    print("3. Construir hospital")
-    print("4. Construir museo")
-    print("5. Salir")
-    eleccion = input("Seleccione una opción: ")
-    return eleccion
