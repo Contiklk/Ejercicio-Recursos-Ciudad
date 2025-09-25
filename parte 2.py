@@ -24,7 +24,7 @@ def edificio():
              "tiempo": 300}
 
     subsidio = [[5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5]]
- 
+
     casa["recursos"] = rm.sumar_matrices(casa["recursos"], subsidio)
     colegio["recursos"] = rm.sumar_matrices(colegio["recursos"], subsidio)
     hospital["recursos"] = rm.sumar_matrices(hospital["recursos"], subsidio)
@@ -35,7 +35,7 @@ def edificio():
 # SIMULACIONES DE TIEMPO
 
 def simular_tiempo(edificios, obreros, modo="equitativo", grupo=2):
-    
+
     "Simula el tiempo de construcción de varias obras con diferentes estrategias.Equitativo, exclusivo y grupos."
 
     tiempos = {nombre: datos["tiempo"] for nombre, datos in edificios.items()}
@@ -102,4 +102,3 @@ def menu():
         else:
             print("Opción no válida")
 menu()
-
