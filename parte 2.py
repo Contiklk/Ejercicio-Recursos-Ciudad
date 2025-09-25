@@ -2,9 +2,8 @@ import resource_management as rm
 import math
 import time
 
-# =========================
 # RECURSOS Y EDIFICIOS
-# =========================
+
 def edificio():
     madera = 450
     piedra = 350
@@ -33,18 +32,12 @@ def edificio():
 
     return {"Casa": casa, "Colegio": colegio, "Hospital": hospital, "Museo": museo}
 
-# =========================
 # SIMULACIONES DE TIEMPO
-# =========================
+
 def simular_tiempo(edificios, obreros, modo="equitativo", grupo=2):
-    """
-    Simula el tiempo de construcción de varias obras con diferentes estrategias.
     
-    modos:
-      - "equitativo": los obreros se reparten entre todas las obras
-      - "exclusivo": un obrero por obra (máximo n obreros trabajando)
-      - "grupos": obreros se dividen en grupos de tamaño fijo
-    """
+    "Simula el tiempo de construcción de varias obras con diferentes estrategias.Equitativo, exclusivo y grupos."
+
     tiempos = {nombre: datos["tiempo"] for nombre, datos in edificios.items()}
     tiempo_total = 0
 
@@ -77,9 +70,8 @@ def simular_tiempo(edificios, obreros, modo="equitativo", grupo=2):
 
     return tiempo_total
 
-# =========================
 # MENÚ
-# =========================
+
 def menu():
     edificios = edificio()
     while True:
