@@ -22,7 +22,7 @@ def edificio():
              "tiempo": 300}
 
     subsidio = [[5, 5, 5, 5]]
- 
+
     casa["recursos"] = rm.sumar_matrices(casa["recursos"], subsidio)
     colegio["recursos"] = rm.sumar_matrices(colegio["recursos"], subsidio)
     hospital["recursos"] = rm.sumar_matrices(hospital["recursos"], subsidio)
@@ -64,6 +64,11 @@ def simular_tiempo(edificios, obreros, modo="equitativo", grupo=2):
 
 # MENÚ
 
+edificios_construidos = []
+
+def registrar_edificio(nombre):
+    edificios_construidos.append(nombre)
+
 def construir(edificios, nombre):
     obreros = int(input("Número de obreros disponibles: "))
     print("Seleccione el modo de construcción:")
@@ -87,9 +92,18 @@ def construir(edificios, nombre):
         grupo = int(input("Tamaño del grupo de obreros: "))
 
     # Simulamos solo el edificio elegido
-    
+
     tiempo = simular_tiempo({nombre: edificios[nombre]}, obreros, modo, grupo)
     print(f"\nConstrucción de {nombre} terminada en {tiempo} horas con modo '{modo}'.\n")
+    registrar_edificio(nombre)
+
+def mostrar_edificios_registrados():
+    print("\n--- EDIFICIOS CONSTRUIDOS ---")
+    if edificios_construidos:
+        for i, nombre in enumerate(edificios_construidos, 1):
+            print(f"{i}. {nombre}")
+    else:
+        print("No se ha construido ningún edificio aún.")
 
 def menu():
     edificios = edificio()
@@ -99,7 +113,8 @@ def menu():
         print("2. Construir colegio")
         print("3. Construir hospital")
         print("4. Construir museo")
-        print("5. Salir")
+        print("5. Ver edificios construidos")
+        print("6. Salir")
         eleccion = input("Seleccione una opción: ")
 
         if eleccion == "1":
@@ -111,6 +126,8 @@ def menu():
         elif eleccion == "4":
             construir(edificios, "Museo")
         elif eleccion == "5":
+            mostrar_edificios_registrados()
+        elif eleccion == "6":
             break
         else:
             print("Opción no válida")
