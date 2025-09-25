@@ -108,6 +108,13 @@ def mostrar_edificios_registrados():
 def menu():
     edificios = edificio()
     while True:
+        print("\n--- RECURSOS DISPONIBLES ---")
+        print("Madera = 450, Piedra = 350, Metal = 400, Dinero = 1000")
+        print("\n--- COSTOS DE CONSTRUCCIÓN (con subsidio) ---")
+        print("Casa = {'Recursos': [[10, 5, 15, 30]], 'Tiempo': 120}")
+        print("Colegio = {'Recursos': [[20, 10, 25, 50]], 'Tiempo': 200}")
+        print("Hospital = {'Recursos': [[30, 20, 40, 100]], 'Tiempo': 400}")
+        print("Museo = {'Recursos': [[25, 15, 30, 80]], 'Tiempo': 300}")
         print("\n--- MENÚ ---")
         print("1. Construir casa")
         print("2. Construir colegio")
