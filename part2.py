@@ -12,16 +12,16 @@ def edificio():
     print(f"Total de recursos: {total_recursos}")
 
 
-    casa = {"recursos": [[10, 5, 15, 30], [20, 10, 25, 50], [30, 15, 35, 70]],
+    casa = {"recursos": [[10, 5, 15, 30]],
             "tiempo": 120}
-    colegio = {"recursos": [[20, 10, 25, 50], [30, 15, 35, 70], [40, 20, 45, 90]],
+    colegio = {"recursos": [[20, 10, 25, 50]],
                "tiempo": 200}
-    hospital = {"recursos": [[30, 20, 40, 100], [40, 25, 50, 120], [50, 30, 60, 150]],
+    hospital = {"recursos": [[30, 20, 40, 100]],
                 "tiempo": 400}
-    museo = {"recursos": [[25, 15, 30, 80], [35, 20, 40, 100], [45, 25, 50, 130]],
+    museo = {"recursos": [[25, 15, 30, 80]],
              "tiempo": 300}
 
-    subsidio = [[5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5]]
+    subsidio = [[5, 5, 5, 5]]
  
     casa["recursos"] = rm.sumar_matrices(casa["recursos"], subsidio)
     colegio["recursos"] = rm.sumar_matrices(colegio["recursos"], subsidio)
