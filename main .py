@@ -17,15 +17,19 @@ while True:
     eleccion = input("\nSeleccione una opción: ")
     if eleccion == "1":
         ed.construir(edificios, "Casa")
+        print(f"\n--- Fin paso {paso} ---\n")
         paso += 1
     elif eleccion == "2":
         ed.construir(edificios, "Colegio")
+        print(f"\n--- Fin paso {paso} ---\n")
         paso += 1
     elif eleccion == "3":
         ed.construir(edificios, "Hospital")
+        print(f"\n--- Fin paso {paso} ---\n")
         paso += 1
     elif eleccion == "4":
         ed.construir(edificios, "Museo")
+        print(f"\n--- Fin paso {paso} ---\n")
         paso += 1
     elif eleccion == "5":
         ed.mostrar_edificios_registrados()
@@ -36,5 +40,4 @@ while True:
         break
     else:
         print("Opción no válida")
-    print(f"\n--- Fin paso {paso} ---\n")
     time.sleep(5)

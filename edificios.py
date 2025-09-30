@@ -157,7 +157,7 @@ def pedir_prestamo(paso_actual):
         ultimo_prestamo = paso_actual
         print("\n¡Préstamo recibido! +200 de cada recurso.")
     else:
-        if paso_actual < 6:
+        if paso_actual < 5:
             print("\nNo puedes pedir un préstamo antes del paso 5.")
         else:
             faltan = 5 - (paso_actual - ultimo_prestamo)
